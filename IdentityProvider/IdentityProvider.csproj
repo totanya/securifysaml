@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <DockerComposeProjectPath>../docker-compose.dcproj</DockerComposeProjectPath>
+    <UserSecretsId>61c920c2-e634-4b58-adef-0092fb7222b3</UserSecretsId>
+  </PropertyGroup>
+
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Release' " />
+  <ItemGroup>
+    <None Remove="Domain\" />
+    <None Remove="ITfoxtec.Identity.Saml2.MvcCore" />
+    <None Remove="Views\" />
+    <None Remove="Views\Auth\" />
+    <None Remove="Properties\PublishProfiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Domain\" />
+    <Folder Include="Views\" />
+    <Folder Include="Views\Auth\" />
+    <Folder Include="Properties\PublishProfiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="ITfoxtec.Identity.Saml2.MvcCore" Version="4.7.1" />
+  </ItemGroup>
+</Project>
