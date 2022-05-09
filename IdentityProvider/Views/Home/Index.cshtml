@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Default Page";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <p>
+            TestIdPCore <a href="./Metadata">Metadata</a>
+        </p>
+    </div>
+
+    @if (ViewBag.RelyingParties != null)
+    {
+        <div>
+            <a href="@Url.Action("IdpInitiate", "Auth", new { relyingPartyStr = "securify-sp" })">Service SP</a>
+        </div>
+    }
+</div>
